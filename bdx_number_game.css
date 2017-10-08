@@ -1,0 +1,27 @@
+.main {
+  text-align: center;
+}
+
+h1 {
+  font-style: italic;
+  font-family: sans-serif;
+  text-align: center;
+  color: #03b1b1;
+}
+
+h4 {
+  color: #1481c5;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+button {
+  border-radius: 10px;
+  margin: 10px;
+}
+
+p {
+  color: red;
+  font-style: italic;
+  font-weight: bold;
+}
