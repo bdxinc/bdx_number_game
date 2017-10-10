@@ -15,13 +15,18 @@ h4 {
   font-family: sans-serif;
 }
 
-button {
-  border-radius: 10px;
-  margin: 10px;
-}
-
 p {
   color: red;
   font-style: italic;
   font-weight: bold;
+}
+
+button {
+  border-radius: 10px;
+  margin: 10px;
+  display: block;
+}
+
+input {
+  display: block;
 }
