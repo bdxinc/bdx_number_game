@@ -43,8 +43,12 @@ function returnGuess(returned) {
 
   if (guess == rNumber) {
     button.textContent = "PLAY AGAIN";
+    document.getElementById("guess").style.display = "none";
+
   } else if (guesses >= limit){
     button.textContent = "TRY AGAIN";
+    document.getElementById("guess").style.display = "none";
+
   }
 }
 
@@ -61,7 +65,7 @@ Here is a little breakdown of the flow of the game...
 //1. User inputs a number;
 //2. Button is clicked to submit guess;
 /3. Validate user input;
-4. Check guess (has user run out of guesses or guesses the correct number);
+//4. Check guess (has user run out of guesses or guesses the correct number);
 5. Change form display if necessary;
 6. Log guess history;
 7. When the game is over allow user to play again.

@@ -9,10 +9,12 @@
       <h4>
         Instructions: Guess stuff...
       </h4>
-      <input type="text" name="guess" id="guess" placeholder="guess #"><br>
-      <button id="button">SUBMIT</button>
+      <form id="guessStuff">
+        <input type="number" name="guess" id="guess" placeholder="guess #" required><br>
+        <button id="button">SUBMIT</button>
+      </form>
       <div id="guesses">
-
+        <!-- returned guess -->
       </div>
     </div>
     <script src="bdx_number_game.js"></script>
