@@ -10,7 +10,15 @@ var guesses = 0;
 var limit = 3;
 var guess;
 
+
 function submitGuess() {
+  var guessEl = document.getElementById("guess");
+
+  event.preventDefault();
+  if(eL.textContent === "TRY AGAIN" || eL.textContent === "PLAY AGAIN") {
+    window.location.reload();
+  }
+
   var returned;
 
   if (guesses < limit) {
@@ -28,6 +36,7 @@ function submitGuess() {
 
     returnGuess(returned);
   }
+  guessEl.value = "";
 }
 
 var eL = document.getElementById("button");
@@ -44,11 +53,9 @@ function returnGuess(returned) {
   if (guess == rNumber) {
     button.textContent = "PLAY AGAIN";
     document.getElementById("guess").style.display = "none";
-
   } else if (guesses >= limit){
     button.textContent = "TRY AGAIN";
     document.getElementById("guess").style.display = "none";
-
   }
 }
 
