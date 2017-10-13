@@ -1,14 +1,32 @@
+var min = 1;
+var max = 11;
+
 function random(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
-var rNumber = random(1,11);
+var rNumber = random(min,max);
 console.log(rNumber);
+
+var newP1 = document.createElement("p");
+var inst = document.createTextNode("Guess a number between " + min + " and " + max + ".");
+newP1.appendChild(inst);
+
+document.getElementById("range").appendChild(newP1);
+
 
 
 var guesses = 0;
 var limit = 3;
 var guess;
+var total = limit - guesses;
+
+var newP2 = document.createElement("p");
+var left = document.createTextNode("Guesses remaining: " + total + "...?!");
+newP2.appendChild(left);
+
+document.getElementById("remaining").appendChild(newP2);
+
 
 
 function submitGuess() {
@@ -44,18 +62,25 @@ eL.addEventListener("click", submitGuess, true);
 
 
 function returnGuess(returned) {
-  var newP = document.createElement("p");
+  var newP3 = document.createElement("p");
   var text = document.createTextNode(returned);
-  newP.appendChild(text);
+  newP3.appendChild(text);
 
-  document.getElementById("guesses").appendChild(newP);
+  document.getElementById("guesses").appendChild(newP3);
 
   if (guess == rNumber) {
     button.textContent = "PLAY AGAIN";
     document.getElementById("guess").style.display = "none";
+
   } else if (guesses >= limit){
     button.textContent = "TRY AGAIN";
     document.getElementById("guess").style.display = "none";
+
+    var newP4 = document.createElement("p");
+    var lost = document.createTextNode(rNumber + " was our number. Try again...");
+    newP4.appendChild(lost);
+
+    document.getElementById("failed").appendChild(newP4);
   }
 }
 
